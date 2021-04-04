@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "bpg_customizations:block/test_block"
+    }
+  }
+}

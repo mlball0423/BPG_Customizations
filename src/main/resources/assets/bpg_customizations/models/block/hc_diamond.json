@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "bpg_customizations:blocks/hyper_compressed_diamond",
+    "up": "bpg_customizations:blocks/hyper_compressed_diamond",
+    "north": "bpg_customizations:blocks/hyper_compressed_diamond",
+    "east": "bpg_customizations:blocks/hyper_compressed_diamond",
+    "south": "bpg_customizations:blocks/hyper_compressed_diamond",
+    "west": "bpg_customizations:blocks/hyper_compressed_diamond",
+    "particle": "bpg_customizations:blocks/hyper_compressed_diamond"
+  }
+}

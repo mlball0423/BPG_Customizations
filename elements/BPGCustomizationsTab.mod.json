@@ -1,0 +1,11 @@
+{
+  "_fv": 17,
+  "_type": "tab",
+  "definition": {
+    "name": "BPG Customizations",
+    "icon": {
+      "value": "CUSTOM:InfinitiumBlock"
+    },
+    "showSearch": false
+  }
+}

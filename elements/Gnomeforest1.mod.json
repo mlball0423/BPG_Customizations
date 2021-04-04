@@ -1,0 +1,109 @@
+{
+  "_fv": 17,
+  "_type": "biome",
+  "definition": {
+    "name": "Gnomeforest 1",
+    "groundBlock": {
+      "value": "Blocks.GRASS"
+    },
+    "undergroundBlock": {
+      "value": "Blocks.DIRT#0"
+    },
+    "airColor": {
+      "value": -9571367,
+      "falpha": 0.0
+    },
+    "grassColor": {
+      "value": -3257613,
+      "falpha": 0.0
+    },
+    "foliageColor": {
+      "value": -9960545,
+      "falpha": 0.0
+    },
+    "waterColor": {
+      "value": -14540853,
+      "falpha": 0.0
+    },
+    "waterFogColor": {
+      "value": -14540853,
+      "falpha": 0.0
+    },
+    "ambientSound": {
+      "value": "ambient.cave"
+    },
+    "additionsSound": {
+      "value": ""
+    },
+    "music": {
+      "value": "ambient.cave"
+    },
+    "moodSound": {
+      "value": ""
+    },
+    "moodSoundDelay": 6000,
+    "spawnParticles": false,
+    "particleToSpawn": {
+      "value": "EXPLOSION_NORMAL"
+    },
+    "particlesProbability": 0.5,
+    "biomeCategory": "FOREST",
+    "parent": {
+      "value": "No parent"
+    },
+    "rainingPossibility": 0.5,
+    "temperature": 0.5,
+    "baseHeight": 0.1,
+    "heightVariation": 0.1,
+    "biomeType": "WARM",
+    "spawnBiome": false,
+    "biomeWeight": 10,
+    "biomeDictionaryTypes": [],
+    "grassPerChunk": 5,
+    "seagrassPerChunk": 0,
+    "flowersPerChunk": 2,
+    "mushroomsPerChunk": 4,
+    "bigMushroomsChunk": 1,
+    "sandPatchesPerChunk": 0,
+    "gravelPatchesPerChunk": 0,
+    "reedsPerChunk": 0,
+    "cactiPerChunk": 0,
+    "treesPerChunk": 7,
+    "vanillaTreeType": "Big trees",
+    "treeType": 1,
+    "minHeight": 9,
+    "maxWaterDepth": 1,
+    "treeStem": {
+      "value": "Blocks.LOG2#1"
+    },
+    "treeBranch": {
+      "value": "Blocks.LEAVES2#1"
+    },
+    "treeVines": {
+      "value": "Blocks.VINE"
+    },
+    "treeFruits": {
+      "value": ""
+    },
+    "spawnStronghold": false,
+    "spawnMineshaft": true,
+    "spawnPillagerOutpost": false,
+    "villageType": "plains",
+    "spawnWoodlandMansion": true,
+    "spawnJungleTemple": false,
+    "spawnDesertPyramid": false,
+    "spawnIgloo": false,
+    "spawnOceanMonument": false,
+    "spawnShipwreck": false,
+    "oceanRuinType": "NONE",
+    "defaultFeatures": [
+      "Caves",
+      "Ores",
+      "BerryBushes",
+      "Bamboo",
+      "ReedsAndPumpkins",
+      "PlainsTallGrass"
+    ],
+    "spawnEntries": []
+  }
+}

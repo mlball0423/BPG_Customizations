@@ -1,0 +1,13 @@
+{
+  "group": "bpg_customizations",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "bpg_customizations:infinitium_block"
+    }
+  ],
+  "result": {
+    "item": "bpg_customizations:infinitium_ingot",
+    "count": 9
+  }
+}

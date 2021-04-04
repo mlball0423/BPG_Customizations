@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "bpg_customizations:block/gnomia_portal_ew"
+    },
+    "axis=x": {
+      "model": "bpg_customizations:block/gnomia_portal_ns"
+    }
+  }
+}

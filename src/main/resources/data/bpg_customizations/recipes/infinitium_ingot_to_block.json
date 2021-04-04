@@ -1,0 +1,42 @@
+{
+  "group": "bpg_customizations",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "bpg_customizations:infinitium_ingot"
+    },
+    "1": {
+      "item": "bpg_customizations:infinitium_ingot"
+    },
+    "2": {
+      "item": "bpg_customizations:infinitium_ingot"
+    },
+    "3": {
+      "item": "bpg_customizations:infinitium_ingot"
+    },
+    "4": {
+      "item": "bpg_customizations:infinitium_ingot"
+    },
+    "5": {
+      "item": "bpg_customizations:infinitium_ingot"
+    },
+    "6": {
+      "item": "bpg_customizations:infinitium_ingot"
+    },
+    "7": {
+      "item": "bpg_customizations:infinitium_ingot"
+    },
+    "8": {
+      "item": "bpg_customizations:infinitium_ingot"
+    }
+  },
+  "result": {
+    "item": "bpg_customizations:infinitium_block",
+    "count": 1
+  }
+}

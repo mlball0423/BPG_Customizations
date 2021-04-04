@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "bpg_customizations:blocks/infinitium_block_texture_1",
+    "particle": "bpg_customizations:blocks/infinitium_block_texture_1"
+  }
+}

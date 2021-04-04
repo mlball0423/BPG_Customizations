@@ -1,0 +1,13 @@
+{
+  "group": "bpg_customizations",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "bpg_customizations:hyperium_block"
+    }
+  ],
+  "result": {
+    "item": "bpg_customizations:hyperium_ingot",
+    "count": 9
+  }
+}

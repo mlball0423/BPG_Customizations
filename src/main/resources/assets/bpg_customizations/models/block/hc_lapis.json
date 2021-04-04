@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "bpg_customizations:blocks/hc_lapis",
+    "particle": "bpg_customizations:blocks/hc_lapis"
+  }
+}

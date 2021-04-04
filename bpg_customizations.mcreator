@@ -1,0 +1,361 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "HyperiumIngot",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_ingot",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumBlock",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_block",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "InfinitiumIngot",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infinitium_ingot",
+      "path": "~/Infinitium"
+    },
+    {
+      "name": "InfinitiumBlock",
+      "type": "block",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infinitium_block",
+      "path": "~/Infinitium"
+    },
+    {
+      "name": "HyperiumIngotToBlock",
+      "type": "recipe",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_ingot_to_block",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumBlockToIngot",
+      "type": "recipe",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_block_to_ingot",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "InfinitiumIngotToBlock",
+      "type": "recipe",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infinitium_ingot_to_block",
+      "path": "~/Infinitium"
+    },
+    {
+      "name": "InfinitiumBlockToIngot",
+      "type": "recipe",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infinitium_block_to_ingot",
+      "path": "~/Infinitium"
+    },
+    {
+      "name": "BPGCustomizationsTab",
+      "type": "tab",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bpg_customizations_tab"
+    },
+    {
+      "name": "HyperiumArmor",
+      "type": "armor",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumArmorHelmetTickEvent",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_armor_helmet_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "InfinitiumArmor",
+      "type": "armor",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infinitium_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      },
+      "path": "~/Infinitium"
+    },
+    {
+      "name": "InfinitiumArmorSetProcedure1",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infinitium_armor_set_procedure_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Infinitium"
+    },
+    {
+      "name": "HCGold",
+      "type": "block",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hc_gold",
+      "path": "~/HyperCompressedBlocks"
+    },
+    {
+      "name": "HCRedstone",
+      "type": "block",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hc_redstone",
+      "path": "~/HyperCompressedBlocks"
+    },
+    {
+      "name": "HCDiamond",
+      "type": "block",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hc_diamond",
+      "path": "~/HyperCompressedBlocks"
+    },
+    {
+      "name": "Gnomeforest1",
+      "type": "biome",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnomeforest_1",
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "Gnomia",
+      "type": "dimension",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnomia",
+      "metadata": {
+        "ep": true
+      },
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "Gnome",
+      "type": "mob",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome",
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "GnomeMenu",
+      "type": "gui",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_menu",
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "GnomeTradeInputProcedure",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_trade_input_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "GnomeHouseTest2",
+      "type": "structure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_house_test_2",
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "HCCoal",
+      "type": "block",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hc_coal",
+      "path": "~/HyperCompressedBlocks"
+    },
+    {
+      "name": "HCLapis",
+      "type": "block",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hc_lapis",
+      "path": "~/HyperCompressedBlocks"
+    },
+    {
+      "name": "HCEmerald",
+      "type": "block",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hc_emerald",
+      "path": "~/HyperCompressedBlocks"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.bpg_customizations.infinitium_ingot": "Infinitium Ingot",
+      "itemGroup.tabbpg_customizations_tab": "BPG Customizations",
+      "item.bpg_customizations.hyperium_armor_helmet": "Hyperium Helmet",
+      "block.bpg_customizations.hyperium_block": "Hyperium Block",
+      "item.bpg_customizations.hyperium_armor_boots": "Hyperium Boots",
+      "item.bpg_customizations.infinitium_armor_helmet": "Infinitium Helmet",
+      "item.bpg_customizations.infinitium_armor_boots": "Infinitium Boots",
+      "item.bpg_customizations.infinitium_armor_chestplate": "Infinitium Chestplate",
+      "block.bpg_customizations.hc_emerald": "Hyper-compressed Emerald",
+      "item.bpg_customizations.gnomia": "Gnomia Portal Igniter",
+      "block.bpg_customizations.hc_redstone": "Hyper-compressed Redstone",
+      "entity.bpg_customizations.gnome": "Gnome",
+      "block.bpg_customizations.hc_gold": "Hyper-compressed Gold",
+      "item.bpg_customizations.infinitium_armor_leggings": "Infinitium Leggings",
+      "item.bpg_customizations.gnome_spawn_egg": "Gnome Spawn Egg",
+      "block.bpg_customizations.infinitium_block": "Infinitium Block",
+      "biome.bpg_customizations.gnomeforest_1": "Gnomeforest 1",
+      "item.bpg_customizations.hyperium_armor_leggings": "Hyperium Leggings",
+      "item.bpg_customizations.hyperium_ingot": "Hyperium Ingot",
+      "block.bpg_customizations.hc_coal": "Hyper-compressed Coal",
+      "block.bpg_customizations.hc_diamond": "Hyper-compressed Diamond",
+      "block.bpg_customizations.hc_lapis": "Hyper-compressed Lapis",
+      "item.bpg_customizations.hyperium_armor_chestplate": "Hyperium Chestplate"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "HyperCompressedBlocks",
+        "children": []
+      },
+      {
+        "name": "Hyperium",
+        "children": []
+      },
+      {
+        "name": "Infinitium",
+        "children": []
+      },
+      {
+        "name": "Gnomia",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "bpg_customizations",
+    "modName": "BPG Customizations",
+    "version": "1.0.0",
+    "author": "mlbal, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "modElementsPackage": "net.mcreator.bpgcustomizations",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100112313
+}

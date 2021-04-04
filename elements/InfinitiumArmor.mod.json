@@ -1,0 +1,61 @@
+{
+  "_fv": 17,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "infinitium_head",
+    "enableBody": true,
+    "textureBody": "infinitium_body",
+    "enableLeggings": true,
+    "textureLeggings": "infinitium_leggings",
+    "enableBoots": true,
+    "textureBoots": "infinitium_boots",
+    "onBodyTick": {
+      "name": "InfinitiumArmorSetProcedure1"
+    },
+    "creativeTab": {
+      "value": "CUSTOM:BPGCustomizationsTab"
+    },
+    "armorTextureFile": "infinitium",
+    "helmetName": "Infinitium Helmet",
+    "bodyName": "Infinitium Chestplate",
+    "leggingsName": "Infinitium Leggings",
+    "bootsName": "Infinitium Boots",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "maxDamage": 100,
+    "damageValueHelmet": 20,
+    "damageValueBody": 60,
+    "damageValueLeggings": 50,
+    "damageValueBoots": 20,
+    "enchantability": 100,
+    "toughness": 10.0,
+    "knockbackResistance": 1.0,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:InfinitiumIngot"
+      }
+    ]
+  }
+}

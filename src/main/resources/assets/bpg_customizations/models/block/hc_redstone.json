@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "bpg_customizations:blocks/hyper_compressed_redstone",
+    "up": "bpg_customizations:blocks/hyper_compressed_redstone",
+    "north": "bpg_customizations:blocks/hyper_compressed_redstone",
+    "east": "bpg_customizations:blocks/hyper_compressed_redstone",
+    "south": "bpg_customizations:blocks/hyper_compressed_redstone",
+    "west": "bpg_customizations:blocks/hyper_compressed_redstone",
+    "particle": "bpg_customizations:blocks/hyper_compressed_redstone"
+  }
+}

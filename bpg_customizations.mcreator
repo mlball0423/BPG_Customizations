@@ -290,13 +290,13 @@
       "path": "~/HyperCompressedBlocks"
     },
     {
-      "name": "TestBlock",
+      "name": "ParadoxiumOre",
       "type": "block",
-      "sortid": 31,
+      "sortid": 32,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "test_block"
+      "registry_name": "paradoxium_ore"
     }
   ],
   "variable_elements": [],
@@ -309,7 +309,7 @@
       "item.bpg_customizations.gnome_spawn_egg": "Gnome Spawn Egg",
       "biome.bpg_customizations.gnomeforest_1": "Gnomeforest 1",
       "item.bpg_customizations.hyperium_armor_leggings": "Hyperium Leggings",
-      "block.bpg_customizations.test_block": "Test Block",
+      "block.bpg_customizations.paradoxium_ore": "Paradoxium Ore",
       "block.bpg_customizations.hc_coal": "Hyper-compressed Coal",
       "block.bpg_customizations.hc_diamond": "Hyper-compressed Diamond",
       "block.bpg_customizations.hc_lapis": "Hyper-compressed Lapis",
@@ -364,6 +364,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.16.5",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.bpgcustomizations",
     "lockBaseModFiles": false
   },

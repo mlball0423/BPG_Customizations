@@ -2,7 +2,7 @@
   "_fv": 17,
   "_type": "block",
   "definition": {
-    "texture": "animatedtest1",
+    "texture": "paradoxium_texture_test_2",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -32,7 +32,7 @@
         "subtract": false
       }
     ],
-    "name": "Test Block",
+    "name": "Paradoxium Ore",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,

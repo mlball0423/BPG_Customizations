@@ -19,11 +19,11 @@ import java.util.List;
 import java.util.Collections;
 
 @BpgCustomizationsModElements.ModElement.Tag
-public class TestBlockBlock extends BpgCustomizationsModElements.ModElement {
-	@ObjectHolder("bpg_customizations:test_block")
+public class ParadoxiumOreBlock extends BpgCustomizationsModElements.ModElement {
+	@ObjectHolder("bpg_customizations:paradoxium_ore")
 	public static final Block block = null;
-	public TestBlockBlock(BpgCustomizationsModElements instance) {
-		super(instance, 31);
+	public ParadoxiumOreBlock(BpgCustomizationsModElements instance) {
+		super(instance, 32);
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class TestBlockBlock extends BpgCustomizationsModElements.ModElement {
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.GROUND).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
-			setRegistryName("test_block");
+			setRegistryName("paradoxium_ore");
 		}
 
 		@Override

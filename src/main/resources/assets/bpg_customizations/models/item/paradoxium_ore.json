@@ -1,5 +1,5 @@
 {
-  "parent": "bpg_customizations:block/test_block",
+  "parent": "bpg_customizations:block/paradoxium_ore",
   "display": {
     "thirdperson": {
       "rotation": [

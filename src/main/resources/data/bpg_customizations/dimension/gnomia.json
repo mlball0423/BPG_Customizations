@@ -7,28 +7,28 @@
       "type": "minecraft:multi_noise",
       "seed": 0,
       "temperature_noise": {
-        "firstOctave": -5.11,
+        "firstOctave": -7.42,
         "amplitudes": [
           2,
           2
         ]
       },
       "humidity_noise": {
-        "firstOctave": -5.11,
+        "firstOctave": -7.42,
         "amplitudes": [
           2,
           2
         ]
       },
       "altitude_noise": {
-        "firstOctave": -5.11,
+        "firstOctave": -7.42,
         "amplitudes": [
           2,
           2
         ]
       },
       "weirdness_noise": {
-        "firstOctave": -5.11,
+        "firstOctave": -7.42,
         "amplitudes": [
           2,
           2
@@ -36,12 +36,122 @@
       },
       "biomes": [
         {
-          "biome": "bpg_customizations:gnomeforest_1",
+          "biome": "bpg_customizations:gnome_forest_short_trees",
           "parameters": {
-            "temperature": 0,
-            "humidity": 0,
-            "altitude": 0,
-            "weirdness": 0,
+            "temperature": 1,
+            "humidity": -1,
+            "altitude": 0.75,
+            "weirdness": -1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_forest_tall_trees",
+          "parameters": {
+            "temperature": 0.818181818182,
+            "humidity": -0.818181818182,
+            "altitude": -0.75,
+            "weirdness": 1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_plains",
+          "parameters": {
+            "temperature": 0.636363636364,
+            "humidity": -0.636363636364,
+            "altitude": 0.75,
+            "weirdness": -1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_forest_short_trees",
+          "parameters": {
+            "temperature": 0.454545454546,
+            "humidity": -0.454545454546,
+            "altitude": -0.75,
+            "weirdness": 1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_forest_tall_trees",
+          "parameters": {
+            "temperature": 0.272727272728,
+            "humidity": -0.272727272728,
+            "altitude": 0.75,
+            "weirdness": -1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_plains",
+          "parameters": {
+            "temperature": 0.09090909091,
+            "humidity": -0.09090909091,
+            "altitude": -0.75,
+            "weirdness": 1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_mountains",
+          "parameters": {
+            "temperature": -0.09090909091,
+            "humidity": 0.09090909091,
+            "altitude": 0.75,
+            "weirdness": -1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_forest_short_trees",
+          "parameters": {
+            "temperature": -0.272727272728,
+            "humidity": 0.272727272728,
+            "altitude": -0.75,
+            "weirdness": 1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_forest_tall_trees",
+          "parameters": {
+            "temperature": -0.454545454546,
+            "humidity": 0.454545454546,
+            "altitude": 0.75,
+            "weirdness": -1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_plains",
+          "parameters": {
+            "temperature": -0.636363636364,
+            "humidity": 0.636363636364,
+            "altitude": -0.75,
+            "weirdness": 1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_mountains",
+          "parameters": {
+            "temperature": -0.818181818182,
+            "humidity": 0.818181818182,
+            "altitude": 0.75,
+            "weirdness": -1.5,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "bpg_customizations:gnome_mountains_trees",
+          "parameters": {
+            "temperature": -1,
+            "humidity": 1,
+            "altitude": -0.75,
+            "weirdness": 1.5,
             "offset": 0
           }
         }

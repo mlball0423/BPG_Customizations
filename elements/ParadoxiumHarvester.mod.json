@@ -1,0 +1,34 @@
+{
+  "_fv": 17,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "paradoxium_harvester",
+    "customModelName": "Normal",
+    "name": "Paradoxium Harvester",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:BPGCustomizationsTab"
+    },
+    "toolType": "Special",
+    "harvestLevel": 1,
+    "efficiency": 100.0,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 4.0,
+    "usageCount": 100,
+    "blocksAffected": [
+      {
+        "value": "CUSTOM:ParadoxiumOre"
+      }
+    ],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": true,
+    "onBlockDestroyedWithTool": {
+      "name": "ParadoxiumHarvesterBlockDestroyedWithTool"
+    }
+  }
+}

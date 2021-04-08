@@ -4,7 +4,40 @@
   "definition": {
     "biomesInDimension": [
       {
-        "value": "CUSTOM:Gnomeforest1"
+        "value": "CUSTOM:GnomeForestShortTrees"
+      },
+      {
+        "value": "CUSTOM:GnomeForestTallTrees"
+      },
+      {
+        "value": "CUSTOM:GnomePlains"
+      },
+      {
+        "value": "CUSTOM:GnomeForestShortTrees"
+      },
+      {
+        "value": "CUSTOM:GnomeForestTallTrees"
+      },
+      {
+        "value": "CUSTOM:GnomePlains"
+      },
+      {
+        "value": "CUSTOM:GnomeMountains"
+      },
+      {
+        "value": "CUSTOM:GnomeForestShortTrees"
+      },
+      {
+        "value": "CUSTOM:GnomeForestTallTrees"
+      },
+      {
+        "value": "CUSTOM:GnomePlains"
+      },
+      {
+        "value": "CUSTOM:GnomeMountains"
+      },
+      {
+        "value": "CUSTOM:GnomeMountainsTrees"
       }
     ],
     "worldGenType": "Normal world gen",
@@ -15,7 +48,7 @@
       "value": "Blocks.WATER"
     },
     "airColor": {
-      "value": -889857,
+      "value": -739590,
       "falpha": 0.0
     },
     "canRespawnHere": false,
@@ -39,7 +72,7 @@
     "igniterTab": {
       "value": "CUSTOM:BPGCustomizationsTab"
     },
-    "texture": "peepee",
+    "texture": "hyperium_key",
     "portalTexture": "gnomium_portal_texture",
     "enablePortal": true
   }

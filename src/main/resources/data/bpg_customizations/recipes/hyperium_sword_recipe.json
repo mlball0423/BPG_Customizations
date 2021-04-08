@@ -1,0 +1,24 @@
+{
+  "group": "bpg_customizations",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1",
+    "2"
+  ],
+  "key": {
+    "0": {
+      "item": "bpg_customizations:hyperium_ingot"
+    },
+    "1": {
+      "item": "bpg_customizations:hyperium_ingot"
+    },
+    "2": {
+      "item": "bpg_customizations:hyperium_rod"
+    }
+  },
+  "result": {
+    "item": "bpg_customizations:hyperium_sword",
+    "count": 1
+  }
+}

@@ -28,6 +28,7 @@ import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.biome.ParticleEffectAmbience;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.BiomeGenerationSettings;
@@ -38,6 +39,7 @@ import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.block.HugeMushroomBlock;
 import net.minecraft.block.Blocks;
@@ -49,23 +51,23 @@ import java.util.Set;
 import com.google.common.collect.ImmutableList;
 
 @BpgCustomizationsModElements.ModElement.Tag
-public class Gnomeforest1Biome extends BpgCustomizationsModElements.ModElement {
+public class GnomeForestTallTreesBiome extends BpgCustomizationsModElements.ModElement {
 	public static Biome biome;
-	public Gnomeforest1Biome(BpgCustomizationsModElements instance) {
-		super(instance, 22);
+	public GnomeForestTallTreesBiome(BpgCustomizationsModElements instance) {
+		super(instance, 47);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 	private static class BiomeRegisterHandler {
 		@SubscribeEvent
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
 			if (biome == null) {
-				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-9571367).setWaterColor(-14540853).setWaterFogColor(-14540853)
-						.withSkyColor(-9571367).withFoliageColor(-9960545).withGrassColor(-3257613)
-						.setAmbientSound((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")))
+				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-23045).setWaterColor(-14540853).setWaterFogColor(-14540853)
+						.withSkyColor(-23045).withFoliageColor(-1024).withGrassColor(-11016960)
+						.setAmbientSound((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music.menu")))
 						.setMusic(new BackgroundMusicSelector(
-								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("ambient.cave")), 12000,
+								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music.game")), 12000,
 								24000, true))
-						.build();
+						.setParticle(new ParticleEffectAmbience(ParticleTypes.DRIPPING_OBSIDIAN_TEAR, 0.005f)).build();
 				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
 						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(),
 								Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState())));
@@ -80,7 +82,7 @@ public class Gnomeforest1Biome extends BpgCustomizationsModElements.ModElement {
 										.setDecorators(ImmutableList.of(CustomLeaveVineTreeDecorator.instance, CustomTrunkVineTreeDecorator.instance))
 										.setMaxWaterDepth(1).build())
 						.withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT)
-						.withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(7, 0.1F, 1))));
+						.withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(8, 0.1F, 1))));
 				biomeGenerationSettings.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
 						Feature.RANDOM_PATCH.withConfiguration(Features.Configs.GRASS_PATCH_CONFIG).withPlacement(Features.Placements.PATCH_PLACEMENT)
 								.withPlacement(Placement.COUNT_NOISE.configure(new NoiseDependant(-0.8D, 5, 5))));
@@ -109,6 +111,9 @@ public class Gnomeforest1Biome extends BpgCustomizationsModElements.ModElement {
 								new SimpleBlockStateProvider(Blocks.MUSHROOM_STEM.getDefaultState().with(HugeMushroomBlock.UP, Boolean.FALSE)
 										.with(HugeMushroomBlock.DOWN, Boolean.FALSE)),
 								1)));
+				biomeGenerationSettings.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
+						Feature.RANDOM_PATCH.withConfiguration(Features.Configs.SUGAR_CANE_PATCH_CONFIG)
+								.withPlacement(Features.Placements.PATCH_PLACEMENT).func_242731_b(1));
 				DefaultBiomeFeatures.withCavesAndCanyons(biomeGenerationSettings);
 				DefaultBiomeFeatures.withOverworldOres(biomeGenerationSettings);
 				DefaultBiomeFeatures.withChanceBerries(biomeGenerationSettings);
@@ -119,7 +124,7 @@ public class Gnomeforest1Biome extends BpgCustomizationsModElements.ModElement {
 				biome = new Biome.Builder().precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1f).scale(0.1f)
 						.temperature(0.5f).downfall(0.5f).setEffects(effects).withMobSpawnSettings(mobSpawnInfo.copy())
 						.withGenerationSettings(biomeGenerationSettings.build()).build();
-				event.getRegistry().register(biome.setRegistryName("bpg_customizations:gnomeforest_1"));
+				event.getRegistry().register(biome.setRegistryName("bpg_customizations:gnome_forest_tall_trees"));
 			}
 		}
 	}
@@ -133,7 +138,7 @@ public class Gnomeforest1Biome extends BpgCustomizationsModElements.ModElement {
 		static {
 			codec = com.mojang.serialization.Codec.unit(() -> instance);
 			tdt = new TreeDecoratorType(codec);
-			tdt.setRegistryName("gnomeforest_1_lvtd");
+			tdt.setRegistryName("gnome_forest_tall_trees_lvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 		@Override
@@ -154,7 +159,7 @@ public class Gnomeforest1Biome extends BpgCustomizationsModElements.ModElement {
 		static {
 			codec = com.mojang.serialization.Codec.unit(() -> instance);
 			tdt = new TreeDecoratorType(codec);
-			tdt.setRegistryName("gnomeforest_1_tvtd");
+			tdt.setRegistryName("gnome_forest_tall_trees_tvtd");
 			ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
 		}
 		@Override

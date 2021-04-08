@@ -102,7 +102,7 @@ public class GnomiaDimension extends BpgCustomizationsModElements.ModElement {
 		DimensionRenderInfo customEffect = new DimensionRenderInfo(128, true, DimensionRenderInfo.FogType.NORMAL, false, false) {
 			@Override
 			public Vector3d func_230494_a_(Vector3d color, float sunHeight) {
-				return new Vector3d(0.949019607843, 0.419607843137, 1);
+				return new Vector3d(0.956862745098, 0.713725490196, 0.980392156863);
 			}
 
 			@Override

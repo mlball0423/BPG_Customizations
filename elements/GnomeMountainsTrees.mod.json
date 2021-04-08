@@ -1,0 +1,122 @@
+{
+  "_fv": 17,
+  "_type": "biome",
+  "definition": {
+    "name": "Gnome MountainsTrees",
+    "groundBlock": {
+      "value": "Blocks.GRASS"
+    },
+    "undergroundBlock": {
+      "value": "Blocks.DIRT#0"
+    },
+    "airColor": {
+      "value": -2099201,
+      "falpha": 0.0
+    },
+    "grassColor": {
+      "value": -8350870,
+      "falpha": 0.0
+    },
+    "foliageColor": {
+      "value": -196717,
+      "falpha": 0.0
+    },
+    "waterColor": {
+      "value": -11902114,
+      "falpha": 0.0
+    },
+    "waterFogColor": {
+      "value": -11243414,
+      "falpha": 0.0
+    },
+    "ambientSound": {
+      "value": ""
+    },
+    "additionsSound": {
+      "value": ""
+    },
+    "music": {
+      "value": ""
+    },
+    "moodSound": {
+      "value": ""
+    },
+    "moodSoundDelay": 6000,
+    "spawnParticles": true,
+    "particleToSpawn": {
+      "value": "WARPED_SPORE"
+    },
+    "particlesProbability": 0.1,
+    "biomeCategory": "NONE",
+    "parent": {
+      "value": "CUSTOM:GnomeMountains"
+    },
+    "rainingPossibility": 0.3,
+    "temperature": 0.1,
+    "baseHeight": 1.8,
+    "heightVariation": 0.2,
+    "biomeType": "COOL",
+    "spawnBiome": false,
+    "biomeWeight": 100,
+    "biomeDictionaryTypes": [],
+    "grassPerChunk": 4,
+    "seagrassPerChunk": 0,
+    "flowersPerChunk": 4,
+    "mushroomsPerChunk": 0,
+    "bigMushroomsChunk": 0,
+    "sandPatchesPerChunk": 0,
+    "gravelPatchesPerChunk": 0,
+    "reedsPerChunk": 0,
+    "cactiPerChunk": 0,
+    "treesPerChunk": 3,
+    "vanillaTreeType": "Default",
+    "treeType": 1,
+    "minHeight": 5,
+    "maxWaterDepth": 0,
+    "treeStem": {
+      "value": "Blocks.LOG2#1"
+    },
+    "treeBranch": {
+      "value": "Blocks.LEAVES2"
+    },
+    "treeVines": {
+      "value": ""
+    },
+    "treeFruits": {
+      "value": ""
+    },
+    "spawnStronghold": false,
+    "spawnMineshaft": false,
+    "spawnPillagerOutpost": false,
+    "villageType": "taiga",
+    "spawnWoodlandMansion": false,
+    "spawnJungleTemple": false,
+    "spawnDesertPyramid": false,
+    "spawnIgloo": false,
+    "spawnOceanMonument": false,
+    "spawnShipwreck": false,
+    "oceanRuinType": "NONE",
+    "defaultFeatures": [
+      "Caves",
+      "Ores",
+      "Bamboo",
+      "BerryBushes",
+      "ExtraEmeraldOre",
+      "ExtraGoldOre",
+      "ReedsAndPumpkins",
+      "TaigaLargeFerns",
+      "TaigaRocks"
+    ],
+    "spawnEntries": [
+      {
+        "entity": {
+          "value": "EntitySpider"
+        },
+        "minGroup": 4,
+        "maxGroup": 4,
+        "weight": 20,
+        "spawnType": "monster"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "bpg_customizations:items/hyperium_shovel"
+  }
+}

@@ -2,94 +2,94 @@
   "_fv": 17,
   "_type": "biome",
   "definition": {
-    "name": "Gnomeforest 1",
+    "name": "Gnome Mountains",
     "groundBlock": {
-      "value": "Blocks.GRASS"
+      "value": "Blocks.STONE#0"
     },
     "undergroundBlock": {
-      "value": "Blocks.DIRT#0"
+      "value": "Blocks.STONE#0"
     },
     "airColor": {
-      "value": -9571367,
+      "value": -2099201,
       "falpha": 0.0
     },
     "grassColor": {
-      "value": -3257613,
+      "value": -8350870,
       "falpha": 0.0
     },
     "foliageColor": {
-      "value": -9960545,
+      "value": -196717,
       "falpha": 0.0
     },
     "waterColor": {
-      "value": -14540853,
+      "value": -11902114,
       "falpha": 0.0
     },
     "waterFogColor": {
-      "value": -14540853,
+      "value": -11243414,
       "falpha": 0.0
     },
     "ambientSound": {
-      "value": "ambient.cave"
+      "value": ""
     },
     "additionsSound": {
       "value": ""
     },
     "music": {
-      "value": "ambient.cave"
+      "value": ""
     },
     "moodSound": {
       "value": ""
     },
     "moodSoundDelay": 6000,
-    "spawnParticles": false,
+    "spawnParticles": true,
     "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
+      "value": "WARPED_SPORE"
     },
-    "particlesProbability": 0.5,
-    "biomeCategory": "FOREST",
+    "particlesProbability": 0.1,
+    "biomeCategory": "NONE",
     "parent": {
-      "value": "No parent"
+      "value": "CUSTOM:GnomeMountains"
     },
-    "rainingPossibility": 0.5,
-    "temperature": 0.5,
-    "baseHeight": 0.1,
-    "heightVariation": 0.1,
-    "biomeType": "WARM",
+    "rainingPossibility": 0.3,
+    "temperature": 0.1,
+    "baseHeight": 2.0,
+    "heightVariation": 0.3,
+    "biomeType": "COOL",
     "spawnBiome": false,
-    "biomeWeight": 10,
+    "biomeWeight": 100,
     "biomeDictionaryTypes": [],
-    "grassPerChunk": 5,
+    "grassPerChunk": 4,
     "seagrassPerChunk": 0,
-    "flowersPerChunk": 2,
-    "mushroomsPerChunk": 4,
-    "bigMushroomsChunk": 1,
+    "flowersPerChunk": 4,
+    "mushroomsPerChunk": 0,
+    "bigMushroomsChunk": 0,
     "sandPatchesPerChunk": 0,
     "gravelPatchesPerChunk": 0,
     "reedsPerChunk": 0,
     "cactiPerChunk": 0,
-    "treesPerChunk": 7,
-    "vanillaTreeType": "Big trees",
+    "treesPerChunk": 1,
+    "vanillaTreeType": "Default",
     "treeType": 1,
-    "minHeight": 9,
-    "maxWaterDepth": 1,
+    "minHeight": 1,
+    "maxWaterDepth": 0,
     "treeStem": {
       "value": "Blocks.LOG2#1"
     },
     "treeBranch": {
-      "value": "Blocks.LEAVES2#1"
+      "value": "Blocks.LEAVES2"
     },
     "treeVines": {
-      "value": "Blocks.VINE"
+      "value": ""
     },
     "treeFruits": {
       "value": ""
     },
     "spawnStronghold": false,
-    "spawnMineshaft": true,
+    "spawnMineshaft": false,
     "spawnPillagerOutpost": false,
-    "villageType": "plains",
-    "spawnWoodlandMansion": true,
+    "villageType": "taiga",
+    "spawnWoodlandMansion": false,
     "spawnJungleTemple": false,
     "spawnDesertPyramid": false,
     "spawnIgloo": false,
@@ -99,11 +99,24 @@
     "defaultFeatures": [
       "Caves",
       "Ores",
-      "BerryBushes",
       "Bamboo",
+      "BerryBushes",
+      "ExtraEmeraldOre",
+      "ExtraGoldOre",
       "ReedsAndPumpkins",
-      "PlainsTallGrass"
+      "TaigaLargeFerns",
+      "TaigaRocks"
     ],
-    "spawnEntries": []
+    "spawnEntries": [
+      {
+        "entity": {
+          "value": "EntitySpider"
+        },
+        "minGroup": 4,
+        "maxGroup": 4,
+        "weight": 20,
+        "spawnType": "monster"
+      }
+    ]
   }
 }

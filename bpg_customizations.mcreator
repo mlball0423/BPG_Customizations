@@ -189,16 +189,6 @@
       "path": "~/HyperCompressedBlocks"
     },
     {
-      "name": "Gnomeforest1",
-      "type": "biome",
-      "sortid": 22,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "gnomeforest_1",
-      "path": "~/Gnomia"
-    },
-    {
       "name": "Gnomia",
       "type": "dimension",
       "sortid": 23,
@@ -296,37 +286,274 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "paradoxium_ore"
+      "registry_name": "paradoxium_ore",
+      "path": "~/Paradoxium"
+    },
+    {
+      "name": "HyperiumPickaxe",
+      "type": "tool",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_pickaxe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumAxe",
+      "type": "tool",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_axe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumSword",
+      "type": "tool",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_sword",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumShovel",
+      "type": "tool",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_shovel",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumHoe",
+      "type": "tool",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_hoe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumPickaxeRecipe",
+      "type": "recipe",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_pickaxe_recipe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumAxeRecipe",
+      "type": "recipe",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_axe_recipe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumSwordRecipe",
+      "type": "recipe",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_sword_recipe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumShovelRecipe",
+      "type": "recipe",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_shovel_recipe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumHoeRecipe",
+      "type": "recipe",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_hoe_recipe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumRod",
+      "type": "item",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_rod",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "HyperiumRodRecipe",
+      "type": "recipe",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hyperium_rod_recipe",
+      "path": "~/Hyperium"
+    },
+    {
+      "name": "ParadoxiumCrystal",
+      "type": "item",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "paradoxium_crystal",
+      "path": "~/Paradoxium"
+    },
+    {
+      "name": "GnomeForestShortTrees",
+      "type": "biome",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_forest_short_trees",
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "GnomeForestTallTrees",
+      "type": "biome",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_forest_tall_trees",
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "GnomePlains",
+      "type": "biome",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_plains",
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "GnomeMountains",
+      "type": "biome",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_mountains",
+      "path": "~/Gnomia"
+    },
+    {
+      "name": "ParadoxiumHarvester",
+      "type": "tool",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "paradoxium_harvester",
+      "path": "~/Paradoxium"
+    },
+    {
+      "name": "ParadoxiumHarvesterBlockDestroyedWithTool",
+      "type": "procedure",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "paradoxium_harvester_block_destroyed_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Paradoxium"
+    },
+    {
+      "name": "GnomeMountainsTrees",
+      "type": "biome",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_mountains_trees",
+      "path": "~/Gnomia"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.bpg_customizations.paradoxium_harvester": "Paradoxium Harvester",
       "itemGroup.tabbpg_customizations_tab": "BPG Customizations",
+      "biome.bpg_customizations.gnome_plains": "Gnome Plains",
+      "item.bpg_customizations.hyperium_sword": "Hyperium Sword",
+      "item.bpg_customizations.hyperium_shovel": "Hyperium Shovel",
       "item.bpg_customizations.gnomia": "Gnomia Portal Igniter",
       "block.bpg_customizations.hc_gold": "Hyper-compressed Gold",
       "item.bpg_customizations.gnome_spawn_egg": "Gnome Spawn Egg",
-      "biome.bpg_customizations.gnomeforest_1": "Gnomeforest 1",
       "item.bpg_customizations.hyperium_armor_leggings": "Hyperium Leggings",
       "block.bpg_customizations.paradoxium_ore": "Paradoxium Ore",
       "block.bpg_customizations.hc_coal": "Hyper-compressed Coal",
       "block.bpg_customizations.hc_diamond": "Hyper-compressed Diamond",
       "block.bpg_customizations.hc_lapis": "Hyper-compressed Lapis",
+      "biome.bpg_customizations.gnome_mountains": "Gnome Mountains",
       "item.bpg_customizations.hyperium_armor_chestplate": "Hyperium Chestplate",
+      "item.bpg_customizations.hyperium_rod": "Hyperium Rod",
       "item.bpg_customizations.infinitium_ingot": "Infinitium Ingot",
       "item.bpg_customizations.hyperium_armor_helmet": "Hyperium Helmet",
       "block.bpg_customizations.hyperium_block": "Hyperium Block",
       "item.bpg_customizations.hyperium_armor_boots": "Hyperium Boots",
       "item.bpg_customizations.infinitium_armor_helmet": "Infinitium Helmet",
+      "item.bpg_customizations.hyperium_pickaxe": "Hyperium Pickaxe",
       "item.bpg_customizations.infinitium_armor_boots": "Infinitium Boots",
       "item.bpg_customizations.infinitium_armor_chestplate": "Infinitium Chestplate",
       "block.bpg_customizations.hc_emerald": "Hyper-compressed Emerald",
+      "item.bpg_customizations.paradoxium_crystal": "Paradoxium Crystal",
       "block.bpg_customizations.hc_redstone": "Hyper-compressed Redstone",
       "entity.bpg_customizations.gnome": "Gnome",
+      "item.bpg_customizations.hyperium_hoe": "Hyperium Hoe",
       "item.bpg_customizations.infinitium_armor_leggings": "Infinitium Leggings",
+      "biome.bpg_customizations.gnome_forest_short_trees": "Gnomeforest 1",
       "block.bpg_customizations.infinitium_block": "Infinitium Block",
-      "item.bpg_customizations.hyperium_ingot": "Hyperium Ingot"
+      "biome.bpg_customizations.gnome_mountains_trees": "Gnome MountainsTrees",
+      "biome.bpg_customizations.gnome_forest_tall_trees": "Gnomeforest 1",
+      "item.bpg_customizations.hyperium_ingot": "Hyperium Ingot",
+      "item.bpg_customizations.hyperium_axe": "Hyperium Axe"
     }
   },
   "foldersRoot": {
@@ -346,6 +573,10 @@
       },
       {
         "name": "Gnomia",
+        "children": []
+      },
+      {
+        "name": "Paradoxium",
         "children": []
       }
     ]

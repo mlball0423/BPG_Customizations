@@ -16,7 +16,11 @@
       "CUSTOM:Gnomia"
     ],
     "restrictionBlocks": [],
-    "restrictionBiomes": [],
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:GnomeForestTallTrees"
+      }
+    ],
     "ignoreBlocks": "STRUCTURE_BLOCK"
   }
 }

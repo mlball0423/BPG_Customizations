@@ -5,18 +5,12 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.World;
-import net.minecraft.world.GameType;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
-import net.minecraft.client.Minecraft;
 
 import net.mcreator.bpgcustomizations.item.InfinitiumArmorItem;
 import net.mcreator.bpgcustomizations.BpgCustomizationsModElements;
@@ -60,26 +54,6 @@ public class InfinitiumArmorSetProcedure1Procedure extends BpgCustomizationsModE
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 60, (int) 4, (false), (false)));
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 60, (int) 4, (false), (false)));
-			if (entity instanceof PlayerEntity) {
-				((PlayerEntity) entity).abilities.allowFlying = (true);
-				((PlayerEntity) entity).sendPlayerAbilities();
-			}
-		} else if (((new Object() {
-			public boolean checkGamemode(Entity _ent) {
-				if (_ent instanceof ServerPlayerEntity) {
-					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
-				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
-					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-							.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
-					return _npi != null && _npi.getGameType() == GameType.CREATIVE;
-				}
-				return false;
-			}
-		}.checkGamemode(entity)) == (false))) {
-			if (entity instanceof PlayerEntity) {
-				((PlayerEntity) entity).abilities.allowFlying = (false);
-				((PlayerEntity) entity).sendPlayerAbilities();
-			}
 		}
 	}
 

@@ -1,0 +1,27 @@
+{
+  "group": "bpg_customizations",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    " 3",
+    " 5"
+  ],
+  "key": {
+    "0": {
+      "item": "bpg_customizations:hyperium_ingot"
+    },
+    "1": {
+      "item": "bpg_customizations:hyperium_ingot"
+    },
+    "3": {
+      "item": "bpg_customizations:hyperium_rod"
+    },
+    "5": {
+      "item": "bpg_customizations:hyperium_rod"
+    }
+  },
+  "result": {
+    "item": "bpg_customizations:hyperium_hoe",
+    "count": 1
+  }
+}

@@ -43,12 +43,12 @@ public class HyperiumArmorItem extends BpgCustomizationsModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 45;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 0;
 			}
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{4, 8, 10, 4}[slot.getIndex()];
+				return new int[]{4, 6, 8, 3}[slot.getIndex()];
 			}
 
 			@Override

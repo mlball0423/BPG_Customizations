@@ -29,12 +29,10 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.IWorldWriter;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
-import net.minecraft.client.audio.BackgroundMusicSelector;
 import net.minecraft.block.Blocks;
 
 import net.mcreator.bpgcustomizations.BpgCustomizationsModElements;
@@ -56,10 +54,6 @@ public class GnomePlainsBiome extends BpgCustomizationsModElements.ModElement {
 			if (biome == null) {
 				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-6397707).setWaterColor(-11810820).setWaterFogColor(-11810820)
 						.withSkyColor(-6397707).withFoliageColor(-543458).withGrassColor(-14722259)
-						.setAmbientSound((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.13")))
-						.setMusic(new BackgroundMusicSelector(
-								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("music_disc.11")), 12000,
-								24000, true))
 						.setParticle(new ParticleEffectAmbience(ParticleTypes.WARPED_SPORE, 0.002f)).build();
 				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
 						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(),

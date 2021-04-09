@@ -48,7 +48,7 @@ public class InfinitiumArmorItem extends BpgCustomizationsModElements.ModElement
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{20, 50, 60, 20}[slot.getIndex()];
+				return new int[]{5, 10, 20, 5}[slot.getIndex()];
 			}
 
 			@Override

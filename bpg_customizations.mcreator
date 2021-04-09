@@ -519,8 +519,8 @@
   "language_map": {
     "en_us": {
       "item.bpg_customizations.paradoxium_harvester": "Paradoxium Harvester",
-      "biome.bpg_customizations.gnome_plains": "Gnome Plains",
       "itemGroup.tabbpg_customizations_tab": "BPG Customizations",
+      "biome.bpg_customizations.gnome_plains": "Gnome Plains",
       "item.bpg_customizations.hyperium_sword": "Hyperium Sword",
       "item.bpg_customizations.hyperium_shovel": "Hyperium Shovel",
       "item.bpg_customizations.gnomia": "Gnomia Portal Igniter",

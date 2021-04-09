@@ -3,7 +3,7 @@
 // Paste this class into your mod and generate all required imports
 
 
-public class custom_model extends EntityModel<Entity> {
+public class GnomeNoseBase extends EntityModel<Entity> {
 	private final ModelRenderer headbeardhairhat;
 	private final ModelRenderer hair;
 	private final ModelRenderer beard;
@@ -16,7 +16,7 @@ public class custom_model extends EntityModel<Entity> {
 	private final ModelRenderer leftarm;
 	private final ModelRenderer bb_main;
 
-	public custom_model() {
+	public GnomeNoseBase() {
 		textureWidth = 32;
 		textureHeight = 32;
 

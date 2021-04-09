@@ -2,25 +2,26 @@
 // Exported for Minecraft version 1.15 - 1.16
 // Paste this class into your mod and generate all required imports
 
-public static class Modelcustom_model extends EntityModel<Entity> {
+public static class GnomeModel extends EntityModel<Entity> {
 	private final ModelRenderer headbeardhairhat;
 	private final ModelRenderer hair;
 	private final ModelRenderer beard;
 	private final ModelRenderer hat;
-	private final ModelRenderer hat3_r1;
-	private final ModelRenderer hat1_r1;
+	private final ModelRenderer hattip_r1;
+	private final ModelRenderer hatbase_r1;
 	private final ModelRenderer rightleg;
 	private final ModelRenderer leftleg;
 	private final ModelRenderer rightarm;
 	private final ModelRenderer leftarm;
 	private final ModelRenderer bb_main;
 
-	public Modelcustom_model() {
+	public GnomeModel() {
 		textureWidth = 32;
 		textureHeight = 32;
 
 		headbeardhairhat = new ModelRenderer(this);
 		headbeardhairhat.setRotationPoint(0.0F, 17.0F, 0.0F);
+		headbeardhairhat.setTextureOffset(0, 0).addBox(-0.5F, -2.0F, -2.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 		headbeardhairhat.setTextureOffset(0, 0).addBox(-1.5F, -3.0F, -1.5F, 3.0F, 3.0F, 3.0F, 0.0F, false);
 
 		hair = new ModelRenderer(this);
@@ -42,26 +43,26 @@ public static class Modelcustom_model extends EntityModel<Entity> {
 		hat.setRotationPoint(0.0F, 7.0F, 0.0F);
 		headbeardhairhat.addChild(hat);
 
-		hat3_r1 = new ModelRenderer(this);
-		hat3_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
-		hat.addChild(hat3_r1);
-		setRotationAngle(hat3_r1, -0.1309F, 0.0F, 0.0F);
-		hat3_r1.setTextureOffset(18, 9).addBox(-0.5F, -13.0F, -1.75F, 1.0F, 2.0F, 1.0F, 0.0F, false);
-		hat3_r1.setTextureOffset(10, 4).addBox(-1.0F, -12.0F, -2.25F, 2.0F, 2.0F, 2.0F, 0.0F, false);
+		hattip_r1 = new ModelRenderer(this);
+		hattip_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		hat.addChild(hattip_r1);
+		setRotationAngle(hattip_r1, -0.1309F, 0.0F, 0.0F);
+		hattip_r1.setTextureOffset(18, 9).addBox(-0.5F, -13.0F, -1.75F, 1.0F, 2.0F, 1.0F, 0.0F, false);
+		hattip_r1.setTextureOffset(10, 4).addBox(-1.0F, -12.0F, -2.25F, 2.0F, 2.0F, 2.0F, 0.0F, false);
 
-		hat1_r1 = new ModelRenderer(this);
-		hat1_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
-		hat.addChild(hat1_r1);
-		setRotationAngle(hat1_r1, -0.0873F, 0.0F, 0.0F);
-		hat1_r1.setTextureOffset(9, 9).addBox(-1.5F, -11.0F, -2.25F, 3.0F, 2.0F, 3.0F, 0.0F, false);
+		hatbase_r1 = new ModelRenderer(this);
+		hatbase_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
+		hat.addChild(hatbase_r1);
+		setRotationAngle(hatbase_r1, -0.0873F, 0.0F, 0.0F);
+		hatbase_r1.setTextureOffset(9, 9).addBox(-1.5F, -11.0F, -2.25F, 3.0F, 2.0F, 3.0F, 0.0F, false);
 
 		rightleg = new ModelRenderer(this);
 		rightleg.setRotationPoint(1.5F, 21.0F, 0.0F);
-		rightleg.setTextureOffset(6, 18).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, false);
+		rightleg.setTextureOffset(6, 18).addBox(-0.9F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, false);
 
 		leftleg = new ModelRenderer(this);
 		leftleg.setRotationPoint(-1.5F, 21.0F, 0.0F);
-		leftleg.setTextureOffset(10, 19).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, false);
+		leftleg.setTextureOffset(10, 19).addBox(-0.1F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, false);
 
 		rightarm = new ModelRenderer(this);
 		rightarm.setRotationPoint(2.0F, 17.0F, 0.0F);

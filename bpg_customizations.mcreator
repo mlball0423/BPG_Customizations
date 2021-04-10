@@ -512,6 +512,15 @@
       "ids": {},
       "registry_name": "gnome_mountains_trees",
       "path": "~/Gnomia"
+    },
+    {
+      "name": "GoblinTest",
+      "type": "mob",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "goblin_test"
     }
   ],
   "variable_elements": [],
@@ -519,8 +528,8 @@
   "language_map": {
     "en_us": {
       "item.bpg_customizations.paradoxium_harvester": "Paradoxium Harvester",
-      "biome.bpg_customizations.gnome_plains": "Gnome Plains",
       "itemGroup.tabbpg_customizations_tab": "BPG Customizations",
+      "biome.bpg_customizations.gnome_plains": "Gnome Plains",
       "item.bpg_customizations.hyperium_sword": "Hyperium Sword",
       "item.bpg_customizations.hyperium_shovel": "Hyperium Shovel",
       "item.bpg_customizations.gnomia": "Gnomia Portal Igniter",
@@ -544,6 +553,7 @@
       "item.bpg_customizations.infinitium_armor_chestplate": "Infinitium Chestplate",
       "block.bpg_customizations.hc_emerald": "Hyper-compressed Emerald",
       "item.bpg_customizations.paradoxium_crystal": "Paradoxium Crystal",
+      "item.bpg_customizations.goblin_test_spawn_egg": "Goblin Test Spawn Egg",
       "block.bpg_customizations.hc_redstone": "Hyper-compressed Redstone",
       "entity.bpg_customizations.gnome": "Gnome",
       "item.bpg_customizations.hyperium_hoe": "Hyperium Hoe",
@@ -553,7 +563,8 @@
       "biome.bpg_customizations.gnome_mountains_trees": "Gnome MountainsTrees",
       "biome.bpg_customizations.gnome_forest_tall_trees": "Gnomeforest 1",
       "item.bpg_customizations.hyperium_ingot": "Hyperium Ingot",
-      "item.bpg_customizations.hyperium_axe": "Hyperium Axe"
+      "item.bpg_customizations.hyperium_axe": "Hyperium Axe",
+      "entity.bpg_customizations.goblin_test": "Goblin Test"
     }
   },
   "foldersRoot": {

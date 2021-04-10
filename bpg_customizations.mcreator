@@ -209,7 +209,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gnome",
-      "path": "~/Gnomia"
+      "path": "~/Gnomia/Mobs"
     },
     {
       "name": "GnomeMenu",
@@ -247,7 +247,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gnome_house_test_2",
-      "path": "~/Gnomia"
+      "path": "~/Gnomia/Biomes"
     },
     {
       "name": "HCCoal",
@@ -427,7 +427,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gnome_forest_short_trees",
-      "path": "~/Gnomia"
+      "path": "~/Gnomia/Biomes"
     },
     {
       "name": "GnomeForestTallTrees",
@@ -437,7 +437,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gnome_forest_tall_trees",
-      "path": "~/Gnomia"
+      "path": "~/Gnomia/Biomes"
     },
     {
       "name": "GnomePlains",
@@ -447,7 +447,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gnome_plains",
-      "path": "~/Gnomia"
+      "path": "~/Gnomia/Biomes"
     },
     {
       "name": "GnomeMountains",
@@ -457,7 +457,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gnome_mountains",
-      "path": "~/Gnomia"
+      "path": "~/Gnomia/Biomes"
     },
     {
       "name": "ParadoxiumHarvester",
@@ -511,7 +511,66 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gnome_mountains_trees",
-      "path": "~/Gnomia"
+      "path": "~/Gnomia/Biomes"
+    },
+    {
+      "name": "DwarfHostile",
+      "type": "mob",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dwarf_hostile",
+      "path": "~/Gnomia/Mobs"
+    },
+    {
+      "name": "GnomeSlinger",
+      "type": "mob",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_slinger",
+      "path": "~/Gnomia/Mobs"
+    },
+    {
+      "name": "GnomePassive",
+      "type": "mob",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_passive",
+      "path": "~/Gnomia/Mobs"
+    },
+    {
+      "name": "GnomeWarrior",
+      "type": "mob",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_warrior",
+      "path": "~/Gnomia/Mobs"
+    },
+    {
+      "name": "GnomePassiveProcedure",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gnome_passive_procedure",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Gnomia/Mobs"
     }
   ],
   "variable_elements": [],
@@ -519,22 +578,27 @@
   "language_map": {
     "en_us": {
       "item.bpg_customizations.paradoxium_harvester": "Paradoxium Harvester",
+      "entity.bpg_customizations.dwarf_hostile": "Dwarf Hostile",
       "itemGroup.tabbpg_customizations_tab": "BPG Customizations",
       "biome.bpg_customizations.gnome_plains": "Gnome Plains",
+      "entity.bpg_customizations.gnome_warrior": "Gnome Warrior",
       "item.bpg_customizations.hyperium_sword": "Hyperium Sword",
       "item.bpg_customizations.hyperium_shovel": "Hyperium Shovel",
       "item.bpg_customizations.gnomia": "Gnomia Portal Igniter",
       "block.bpg_customizations.hc_gold": "Hyper-compressed Gold",
-      "item.bpg_customizations.gnome_spawn_egg": "Gnome Spawn Egg",
+      "item.bpg_customizations.gnome_spawn_egg": "Gnome Trader Spawn Egg",
       "item.bpg_customizations.hyperium_armor_leggings": "Hyperium Leggings",
+      "item.bpg_customizations.gnome_warrior_spawn_egg": "Gnome Warrior Spawn Egg",
       "block.bpg_customizations.paradoxium_ore": "Paradoxium Ore",
       "block.bpg_customizations.hc_coal": "Hyper-compressed Coal",
       "block.bpg_customizations.hc_diamond": "Hyper-compressed Diamond",
       "block.bpg_customizations.hc_lapis": "Hyper-compressed Lapis",
+      "item.bpg_customizations.gnome_passive_spawn_egg": "Gnome Passive Spawn Egg",
       "biome.bpg_customizations.gnome_mountains": "Gnome Mountains",
       "item.bpg_customizations.hyperium_armor_chestplate": "Hyperium Chestplate",
       "item.bpg_customizations.hyperium_rod": "Hyperium Rod",
       "item.bpg_customizations.infinitium_ingot": "Infinitium Ingot",
+      "entity.bpg_customizations.gnome_passive": "Gnome Passive",
       "item.bpg_customizations.hyperium_armor_helmet": "Hyperium Helmet",
       "block.bpg_customizations.hyperium_block": "Hyperium Block",
       "item.bpg_customizations.hyperium_armor_boots": "Hyperium Boots",
@@ -545,15 +609,18 @@
       "block.bpg_customizations.hc_emerald": "Hyper-compressed Emerald",
       "item.bpg_customizations.paradoxium_crystal": "Paradoxium Crystal",
       "block.bpg_customizations.hc_redstone": "Hyper-compressed Redstone",
-      "entity.bpg_customizations.gnome": "Gnome",
+      "entity.bpg_customizations.gnome": "Gnome Trader",
       "item.bpg_customizations.hyperium_hoe": "Hyperium Hoe",
+      "item.bpg_customizations.gnome_slinger_spawn_egg": "Gnome Slinger Spawn Egg",
+      "entity.bpg_customizations.gnome_slinger": "Gnome Slinger",
       "item.bpg_customizations.infinitium_armor_leggings": "Infinitium Leggings",
       "biome.bpg_customizations.gnome_forest_short_trees": "Gnomeforest 1",
       "block.bpg_customizations.infinitium_block": "Infinitium Block",
       "biome.bpg_customizations.gnome_mountains_trees": "Gnome MountainsTrees",
       "biome.bpg_customizations.gnome_forest_tall_trees": "Gnomeforest 1",
       "item.bpg_customizations.hyperium_ingot": "Hyperium Ingot",
-      "item.bpg_customizations.hyperium_axe": "Hyperium Axe"
+      "item.bpg_customizations.hyperium_axe": "Hyperium Axe",
+      "item.bpg_customizations.dwarf_hostile_spawn_egg": "Dwarf Hostile Spawn Egg"
     }
   },
   "foldersRoot": {
@@ -573,7 +640,16 @@
       },
       {
         "name": "Gnomia",
-        "children": []
+        "children": [
+          {
+            "name": "Mobs",
+            "children": []
+          },
+          {
+            "name": "Biomes",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Paradoxium",

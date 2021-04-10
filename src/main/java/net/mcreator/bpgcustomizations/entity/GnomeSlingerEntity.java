@@ -1,12 +1,8 @@
 
 package net.mcreator.bpgcustomizations.entity;
 
+import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.items.wrapper.EntityHandsInvWrapper;
-import net.minecraftforge.items.wrapper.EntityArmorInvWrapper;
-import net.minecraftforge.items.wrapper.CombinedInvWrapper;
-import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -14,40 +10,30 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.minecraft.world.gen.Heightmap;
+import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Direction;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.IPacket;
-import net.minecraft.nbt.INBT;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
-import net.minecraft.inventory.container.INamedContainerProvider;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.entity.projectile.PotionEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.merchant.villager.VillagerEntity;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.ReturnToVillageGoal;
+import net.minecraft.entity.monster.MonsterEntity;
+import net.minecraft.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.OpenDoorGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
@@ -55,49 +41,72 @@ import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.IRendersAsItem;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
+import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
 
+import net.mcreator.bpgcustomizations.procedures.GnomePassiveProcedureProcedure;
 import net.mcreator.bpgcustomizations.itemgroup.BPGCustomizationsTabItemGroup;
-import net.mcreator.bpgcustomizations.gui.GnomeMenuGui;
 import net.mcreator.bpgcustomizations.BpgCustomizationsModElements;
-
-import javax.annotation.Nullable;
-import javax.annotation.Nonnull;
-
-import io.netty.buffer.Unpooled;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
+import com.google.common.collect.ImmutableMap;
+
 @BpgCustomizationsModElements.ModElement.Tag
-public class GnomeEntity extends BpgCustomizationsModElements.ModElement {
+public class GnomeSlingerEntity extends BpgCustomizationsModElements.ModElement {
 	public static EntityType entity = null;
-	public GnomeEntity(BpgCustomizationsModElements instance) {
-		super(instance, 24);
+	@ObjectHolder("bpg_customizations:entitybulletgnome_slinger")
+	public static final EntityType arrow = null;
+	public GnomeSlingerEntity(BpgCustomizationsModElements instance) {
+		super(instance, 54);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ModelRegisterHandler());
+		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("gnome")
-						.setRegistryName("gnome");
+		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER).setShouldReceiveVelocityUpdates(true)
+				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("gnome_slinger")
+						.setRegistryName("gnome_slinger");
 		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -15983122, -911593, new Item.Properties().group(BPGCustomizationsTabItemGroup.tab))
-				.setRegistryName("gnome_spawn_egg"));
+		elements.items.add(() -> new SpawnEggItem(entity, -1135243, -28668, new Item.Properties().group(BPGCustomizationsTabItemGroup.tab))
+				.setRegistryName("gnome_slinger_spawn_egg"));
+		elements.entities.add(() -> (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
+				.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
+				.size(0.5f, 0.5f)).build("entitybulletgnome_slinger").setRegistryName("entitybulletgnome_slinger"));
+	}
+
+	@SubscribeEvent
+	public void addFeatureToBiomes(BiomeLoadingEvent event) {
+		boolean biomeCriteria = false;
+		if (new ResourceLocation("bpg_customizations:gnome_forest_short_trees").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("bpg_customizations:gnome_forest_tall_trees").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("bpg_customizations:gnome_plains").equals(event.getName()))
+			biomeCriteria = true;
+		if (!biomeCriteria)
+			return;
+		event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(entity, 15, 1, 2));
 	}
 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		DeferredWorkQueue.runLater(this::setupAttributes);
+		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
+				MonsterEntity::canMonsterSpawn);
 	}
 	private static class ModelRegisterHandler {
 		@SubscribeEvent
@@ -107,30 +116,31 @@ public class GnomeEntity extends BpgCustomizationsModElements.ModElement {
 				return new MobRenderer(renderManager, new GnomeModel(), 0.5f) {
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("bpg_customizations:textures/gnomemodel.png");
+						return new ResourceLocation("bpg_customizations:textures/peach_gnome.png");
 					}
 				};
 			});
+			RenderingRegistry.registerEntityRenderingHandler(arrow,
+					renderManager -> new SpriteRenderer(renderManager, Minecraft.getInstance().getItemRenderer()));
 		}
 	}
 	private void setupAttributes() {
 		AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
-		ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2);
-		ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 10);
-		ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0);
+		ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3);
+		ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 20);
+		ammma = ammma.createMutableAttribute(Attributes.ARMOR, 12);
 		ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 3);
 		GlobalEntityTypeAttributes.put(entity, ammma.create());
 	}
-	public static class CustomEntity extends VillagerEntity {
+	public static class CustomEntity extends MonsterEntity implements IRangedAttackMob {
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
 
 		public CustomEntity(EntityType<CustomEntity> type, World world) {
 			super(type, world);
-			experienceValue = 0;
+			experienceValue = 5;
 			setNoAI(false);
-			enablePersistence();
 		}
 
 		@Override
@@ -141,34 +151,41 @@ public class GnomeEntity extends BpgCustomizationsModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new OpenDoorGoal(this, true));
-			this.goalSelector.addGoal(2, new OpenDoorGoal(this, false));
-			this.goalSelector.addGoal(3, new ReturnToVillageGoal(this, 0.6, false));
-			this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, false));
-			this.goalSelector.addGoal(5, new RandomWalkingGoal(this, 1));
-			this.targetSelector.addGoal(6, new HurtByTargetGoal(this));
-			this.goalSelector.addGoal(7, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(8, new SwimGoal(this));
+			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false));
+			this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.goalSelector.addGoal(3, new RandomWalkingGoal(this, 0.8));
+			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
+			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, PlayerEntity.class, false, false) {
+				@Override
+				public boolean shouldExecute() {
+					double x = CustomEntity.this.getPosX();
+					double y = CustomEntity.this.getPosY();
+					double z = CustomEntity.this.getPosZ();
+					Entity entity = CustomEntity.this;
+					return super.shouldExecute() && GnomePassiveProcedureProcedure.executeProcedure(ImmutableMap.of("entity", entity));
+				}
+
+				@Override
+				public boolean shouldContinueExecuting() {
+					double x = CustomEntity.this.getPosX();
+					double y = CustomEntity.this.getPosY();
+					double z = CustomEntity.this.getPosZ();
+					Entity entity = CustomEntity.this;
+					return super.shouldContinueExecuting() && GnomePassiveProcedureProcedure.executeProcedure(ImmutableMap.of("entity", entity));
+				}
+			});
+			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, DwarfHostileEntity.CustomEntity.class, false, false));
+			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
+				@Override
+				public boolean shouldContinueExecuting() {
+					return this.shouldExecute();
+				}
+			});
 		}
 
 		@Override
 		public CreatureAttribute getCreatureAttribute() {
 			return CreatureAttribute.UNDEFINED;
-		}
-
-		@Override
-		public boolean canDespawn(double distanceToClosestPlayer) {
-			return false;
-		}
-
-		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
-			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(Blocks.DANDELION, (int) (1)));
-		}
-
-		@Override
-		public net.minecraft.util.SoundEvent getAmbientSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.villager.ambient"));
 		}
 
 		@Override
@@ -183,83 +200,55 @@ public class GnomeEntity extends BpgCustomizationsModElements.ModElement {
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source.getImmediateSource() instanceof PotionEntity)
+			if (source.getImmediateSource() instanceof ArrowEntity)
 				return false;
 			if (source == DamageSource.LIGHTNING_BOLT)
 				return false;
 			return super.attackEntityFrom(source, amount);
 		}
-		private final ItemStackHandler inventory = new ItemStackHandler(9) {
-			@Override
-			public int getSlotLimit(int slot) {
-				return 64;
-			}
-		};
-		private final CombinedInvWrapper combined = new CombinedInvWrapper(inventory, new EntityHandsInvWrapper(this),
-				new EntityArmorInvWrapper(this));
-		@Override
-		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
-			if (this.isAlive() && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && side == null)
-				return LazyOptional.of(() -> combined).cast();
-			return super.getCapability(capability, side);
+
+		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {
+			ArrowCustomEntity entityarrow = new ArrowCustomEntity(arrow, this, this.world);
+			double d0 = target.getPosY() + (double) target.getEyeHeight() - 1.1;
+			double d1 = target.getPosX() - this.getPosX();
+			double d3 = target.getPosZ() - this.getPosZ();
+			entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 1.6F, 12.0F);
+			world.addEntity(entityarrow);
+		}
+	}
+
+	@OnlyIn(value = Dist.CLIENT, _interface = IRendersAsItem.class)
+	private static class ArrowCustomEntity extends AbstractArrowEntity implements IRendersAsItem {
+		public ArrowCustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
+			super(arrow, world);
+		}
+
+		public ArrowCustomEntity(EntityType<? extends ArrowCustomEntity> type, World world) {
+			super(type, world);
+		}
+
+		public ArrowCustomEntity(EntityType<? extends ArrowCustomEntity> type, double x, double y, double z, World world) {
+			super(type, x, y, z, world);
+		}
+
+		public ArrowCustomEntity(EntityType<? extends ArrowCustomEntity> type, LivingEntity entity, World world) {
+			super(type, entity, world);
 		}
 
 		@Override
-		protected void dropInventory() {
-			super.dropInventory();
-			for (int i = 0; i < inventory.getSlots(); ++i) {
-				ItemStack itemstack = inventory.getStackInSlot(i);
-				if (!itemstack.isEmpty() && !EnchantmentHelper.hasVanishingCurse(itemstack)) {
-					this.entityDropItem(itemstack);
-				}
-			}
+		public IPacket<?> createSpawnPacket() {
+			return NetworkHooks.getEntitySpawningPacket(this);
 		}
 
 		@Override
-		public void writeAdditional(CompoundNBT compound) {
-			super.writeAdditional(compound);
-			compound.put("InventoryCustom", inventory.serializeNBT());
+		@OnlyIn(Dist.CLIENT)
+		public ItemStack getItem() {
+			return new ItemStack(Items.COD, (int) (1));
 		}
 
 		@Override
-		public void readAdditional(CompoundNBT compound) {
-			super.readAdditional(compound);
-			INBT inventoryCustom = compound.get("InventoryCustom");
-			if (inventoryCustom instanceof CompoundNBT)
-				inventory.deserializeNBT((CompoundNBT) inventoryCustom);
-		}
-
-		@Override
-		public ActionResultType func_230254_b_(PlayerEntity sourceentity, Hand hand) {
-			ItemStack itemstack = sourceentity.getHeldItem(hand);
-			ActionResultType retval = ActionResultType.func_233537_a_(this.world.isRemote());
-			if (sourceentity instanceof ServerPlayerEntity) {
-				NetworkHooks.openGui((ServerPlayerEntity) sourceentity, new INamedContainerProvider() {
-					@Override
-					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Gnome Trader");
-					}
-
-					@Override
-					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						PacketBuffer packetBuffer = new PacketBuffer(Unpooled.buffer());
-						packetBuffer.writeBlockPos(new BlockPos(sourceentity.getPosition()));
-						packetBuffer.writeByte(0);
-						packetBuffer.writeVarInt(CustomEntity.this.getEntityId());
-						return new GnomeMenuGui.GuiContainerMod(id, inventory, packetBuffer);
-					}
-				}, buf -> {
-					buf.writeBlockPos(new BlockPos(sourceentity.getPosition()));
-					buf.writeByte(0);
-					buf.writeVarInt(this.getEntityId());
-				});
-			}
-			super.func_230254_b_(sourceentity, hand);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-			return retval;
+		protected ItemStack getArrowStack() {
+			return new ItemStack(Items.COD, (int) (1));
 		}
 	}
 

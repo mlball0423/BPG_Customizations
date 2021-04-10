@@ -2,10 +2,10 @@
   "_fv": 17,
   "_type": "mob",
   "definition": {
-    "mobName": "Gnome Trader",
+    "mobName": "Gnome Warrior",
     "mobLabel": "",
     "mobModelName": "GnomeModel",
-    "mobModelTexture": "gnomemodel.png",
+    "mobModelTexture": "yellow_gnome.png",
     "mobModelGlowTexture": "",
     "modelWidth": 0.6,
     "modelHeight": 1.8,
@@ -13,11 +13,11 @@
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -15983122,
+      "value": -198350,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -911593,
+      "value": -8783881,
       "falpha": 0.0
     },
     "creativeTab": {
@@ -44,19 +44,19 @@
     "equipmentBoots": {
       "value": ""
     },
-    "mobBehaviourType": "Creature",
+    "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 3,
-    "attackKnockback": 0.0,
-    "knockbackResistance": 0.0,
-    "movementSpeed": 0.19999999999999998,
-    "armorBaseValue": 0.0,
+    "attackStrength": 6,
+    "attackKnockback": 1.0,
+    "knockbackResistance": 1.0,
+    "movementSpeed": 0.3,
+    "armorBaseValue": 16.0,
     "trackingRange": 64,
-    "health": 10,
-    "xpAmount": 0,
+    "health": 40,
+    "xpAmount": 5,
     "waterMob": false,
     "flyingMob": false,
-    "guiBoundTo": "GnomeMenu",
+    "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "disableCollisions": false,
@@ -64,12 +64,12 @@
     "canControlForward": false,
     "canControlStrafe": false,
     "immuneToFire": false,
-    "immuneToArrows": false,
+    "immuneToArrows": true,
     "immuneToFallDamage": false,
     "immuneToCactus": false,
     "immuneToDrowning": false,
     "immuneToLightning": true,
-    "immuneToPotions": true,
+    "immuneToPotions": false,
     "immuneToPlayer": false,
     "immuneToExplosion": false,
     "immuneToTrident": false,
@@ -77,10 +77,10 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "Blocks.YELLOW_FLOWER"
+      "value": ""
     },
     "livingSound": {
-      "value": "entity.villager.ambient"
+      "value": ""
     },
     "hurtSound": {
       "value": "entity.generic.hurt"
@@ -99,23 +99,33 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasAI": true,
-    "aiBase": "Villager",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"doors_open\"><field name=\"condition\">null,null</field><next><block type=\"doors_close\"><field name=\"condition\">null,null</field><next><block type=\"move_indoors\"><field name=\"condition\">null,null</field><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aiBase": "(none)",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"995\" y=\"43\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0.8</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">GnomePassiveProcedure,GnomePassiveProcedure</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">CUSTOM:DwarfHostile</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": false,
     "tameable": false,
     "breedTriggerItems": [],
     "ranged": false,
     "rangedAttackItem": {
-      "value": ""
+      "value": "Items.SLIME_BALL"
     },
     "rangedItemType": "Default item",
-    "spawnThisMob": false,
-    "doesDespawnWhenIdle": false,
-    "spawningProbability": 10,
-    "mobSpawningType": "creature",
-    "minNumberOfMobsPerGroup": 4,
-    "maxNumberOfMobsPerGroup": 10,
-    "restrictionBiomes": [],
+    "spawnThisMob": true,
+    "doesDespawnWhenIdle": true,
+    "spawningProbability": 15,
+    "mobSpawningType": "monster",
+    "minNumberOfMobsPerGroup": 1,
+    "maxNumberOfMobsPerGroup": 2,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:GnomeForestShortTrees"
+      },
+      {
+        "value": "CUSTOM:GnomeForestTallTrees"
+      },
+      {
+        "value": "CUSTOM:GnomePlains"
+      }
+    ],
     "spawnInDungeons": false
   }
 }

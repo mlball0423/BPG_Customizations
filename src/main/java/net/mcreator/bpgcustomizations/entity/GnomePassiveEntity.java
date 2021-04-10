@@ -1,78 +1,18 @@
 
 package net.mcreator.bpgcustomizations.entity;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.fml.DeferredWorkQueue;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.biome.MobSpawnInfo;
-import net.minecraft.world.World;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Hand;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.network.IPacket;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.entity.projectile.ArrowEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.passive.TameableEntity;
-import net.minecraft.entity.ai.goal.TemptGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.OwnerHurtTargetGoal;
-import net.minecraft.entity.ai.goal.OwnerHurtByTargetGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.FollowOwnerGoal;
-import net.minecraft.entity.ai.goal.AvoidEntityGoal;
-import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntitySpawnPlacementRegistry;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.entity.AgeableEntity;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.bpgcustomizations.itemgroup.BPGCustomizationsTabItemGroup;
-import net.mcreator.bpgcustomizations.BpgCustomizationsModElements;
-
-import com.mojang.blaze3d.vertex.IVertexBuilder;
-import com.mojang.blaze3d.matrix.MatrixStack;
 
 @BpgCustomizationsModElements.ModElement.Tag
 public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement {
+
 	public static EntityType entity = null;
+
 	public GnomePassiveEntity(BpgCustomizationsModElements instance) {
 		super(instance, 55);
+
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ModelRegisterHandler());
+
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -81,9 +21,12 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE).setShouldReceiveVelocityUpdates(true)
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).size(0.6f, 1.8f)).build("gnome_passive")
 						.setRegistryName("gnome_passive");
+
 		elements.entities.add(() -> entity);
+
 		elements.items.add(() -> new SpawnEggItem(entity, -4550185, -8789326, new Item.Properties().group(BPGCustomizationsTabItemGroup.tab))
 				.setRegistryName("gnome_passive_spawn_egg"));
+
 	}
 
 	@SubscribeEvent
@@ -99,39 +42,50 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
+
 		event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(entity, 10, 2, 4));
 	}
 
 	@Override
 	public void init(FMLCommonSetupEvent event) {
 		DeferredWorkQueue.runLater(this::setupAttributes);
+
 		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos,
 						random) -> (world.getBlockState(pos.down()).getMaterial() == Material.ORGANIC && world.getLightSubtracted(pos, 0) > 8));
+
 	}
+
 	private static class ModelRegisterHandler {
+
 		@SubscribeEvent
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
 				return new MobRenderer(renderManager, new GnomeModel(), 0.5f) {
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("bpg_customizations:textures/lilac_gnome.png");
 					}
 				};
 			});
+
 		}
 	}
+
 	private void setupAttributes() {
 		AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
 		ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3);
 		ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 20);
 		ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0);
 		ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 3);
+
 		GlobalEntityTypeAttributes.put(entity, ammma.create());
 	}
+
 	public static class CustomEntity extends TameableEntity {
+
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -140,6 +94,7 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
+
 		}
 
 		@Override
@@ -150,6 +105,7 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
+
 			this.goalSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
 			this.goalSelector.addGoal(2, new OwnerHurtTargetGoal(this));
 			this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, false));
@@ -161,6 +117,7 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 			this.goalSelector.addGoal(8, new AvoidEntityGoal(this, DwarfHostileEntity.CustomEntity.class, (float) 6, 1, 1.2));
 			this.goalSelector.addGoal(9, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(10, new SwimGoal(this));
+
 		}
 
 		@Override
@@ -191,6 +148,7 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 		public ActionResultType func_230254_b_(PlayerEntity sourceentity, Hand hand) {
 			ItemStack itemstack = sourceentity.getHeldItem(hand);
 			ActionResultType retval = ActionResultType.func_233537_a_(this.world.isRemote());
+
 			Item item = itemstack.getItem();
 			if (itemstack.getItem() instanceof SpawnEggItem) {
 				retval = super.func_230254_b_(sourceentity, hand);
@@ -221,6 +179,7 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 					} else {
 						this.world.setEntityState(this, (byte) 6);
 					}
+
 					this.enablePersistence();
 					retval = ActionResultType.func_233537_a_(this.world.isRemote());
 				} else {
@@ -229,6 +188,7 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 						this.enablePersistence();
 				}
 			}
+
 			double x = this.getPosX();
 			double y = this.getPosY();
 			double z = this.getPosZ();
@@ -248,15 +208,19 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 		public boolean isBreedingItem(ItemStack stack) {
 			if (stack == null)
 				return false;
+
 			if (new ItemStack(Blocks.LILY_OF_THE_VALLEY, (int) (1)).getItem() == stack.getItem())
 				return true;
+
 			return false;
 		}
+
 	}
 
 	// Made with Blockbench 3.8.3
 	// Exported for Minecraft version 1.15 - 1.16
 	// Paste this class into your mod and generate all required imports
+
 	public static class GnomeModel extends EntityModel<Entity> {
 		private final ModelRenderer headbeardhairhat;
 		private final ModelRenderer hair;
@@ -269,18 +233,22 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 		private final ModelRenderer rightarm;
 		private final ModelRenderer leftarm;
 		private final ModelRenderer bb_main;
+
 		public GnomeModel() {
 			textureWidth = 32;
 			textureHeight = 32;
+
 			headbeardhairhat = new ModelRenderer(this);
 			headbeardhairhat.setRotationPoint(0.0F, 17.0F, 0.0F);
 			headbeardhairhat.setTextureOffset(0, 0).addBox(-0.5F, -2.0F, -2.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 			headbeardhairhat.setTextureOffset(0, 0).addBox(-1.5F, -3.0F, -1.5F, 3.0F, 3.0F, 3.0F, 0.0F, false);
+
 			hair = new ModelRenderer(this);
 			hair.setRotationPoint(0.0F, 7.0F, 0.0F);
 			headbeardhairhat.addChild(hair);
 			hair.setTextureOffset(16, 2).addBox(-1.75F, -10.0F, 1.0F, 2.0F, 2.0F, 1.0F, 0.0F, false);
 			hair.setTextureOffset(0, 18).addBox(-0.25F, -10.0F, 1.0F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+
 			beard = new ModelRenderer(this);
 			beard.setRotationPoint(0.0F, 7.0F, 0.0F);
 			headbeardhairhat.addChild(beard);
@@ -289,32 +257,40 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 			beard.setTextureOffset(16, 6).addBox(0.75F, -8.0F, -2.0F, 1.0F, 1.0F, 2.0F, 0.0F, false);
 			beard.setTextureOffset(9, 0).addBox(-1.25F, -8.0F, -2.0F, 2.0F, 1.0F, 2.0F, 0.0F, false);
 			beard.setTextureOffset(0, 12).addBox(0.75F, -10.0F, -1.0F, 1.0F, 2.0F, 2.0F, 0.0F, false);
+
 			hat = new ModelRenderer(this);
 			hat.setRotationPoint(0.0F, 7.0F, 0.0F);
 			headbeardhairhat.addChild(hat);
+
 			hattip_r1 = new ModelRenderer(this);
 			hattip_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
 			hat.addChild(hattip_r1);
 			setRotationAngle(hattip_r1, -0.1309F, 0.0F, 0.0F);
 			hattip_r1.setTextureOffset(18, 9).addBox(-0.5F, -13.0F, -1.75F, 1.0F, 2.0F, 1.0F, 0.0F, false);
 			hattip_r1.setTextureOffset(10, 4).addBox(-1.0F, -12.0F, -2.25F, 2.0F, 2.0F, 2.0F, 0.0F, false);
+
 			hatbase_r1 = new ModelRenderer(this);
 			hatbase_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
 			hat.addChild(hatbase_r1);
 			setRotationAngle(hatbase_r1, -0.0873F, 0.0F, 0.0F);
 			hatbase_r1.setTextureOffset(9, 9).addBox(-1.5F, -11.0F, -2.25F, 3.0F, 2.0F, 3.0F, 0.0F, false);
+
 			rightleg = new ModelRenderer(this);
 			rightleg.setRotationPoint(1.5F, 21.0F, 0.0F);
 			rightleg.setTextureOffset(6, 18).addBox(-0.9F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, false);
+
 			leftleg = new ModelRenderer(this);
 			leftleg.setRotationPoint(-1.5F, 21.0F, 0.0F);
 			leftleg.setTextureOffset(10, 19).addBox(-0.1F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, false);
+
 			rightarm = new ModelRenderer(this);
 			rightarm.setRotationPoint(2.0F, 17.0F, 0.0F);
 			rightarm.setTextureOffset(10, 14).addBox(0.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+
 			leftarm = new ModelRenderer(this);
 			leftarm.setRotationPoint(-2.0F, 17.0F, 0.0F);
 			leftarm.setTextureOffset(14, 14).addBox(-1.0F, 0.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+
 			bb_main = new ModelRenderer(this);
 			bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
 			bb_main.setTextureOffset(0, 6).addBox(-2.0F, -7.0F, -1.0F, 4.0F, 4.0F, 2.0F, 0.0F, false);
@@ -338,6 +314,7 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.rightleg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 			this.rightarm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
 			this.leftleg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
@@ -346,4 +323,5 @@ public class GnomePassiveEntity extends BpgCustomizationsModElements.ModElement 
 			this.headbeardhairhat.rotateAngleX = f4 / (180F / (float) Math.PI);
 		}
 	}
+
 }

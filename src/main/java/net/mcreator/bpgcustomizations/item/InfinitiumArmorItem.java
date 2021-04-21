@@ -43,7 +43,7 @@ public class InfinitiumArmorItem extends BpgCustomizationsModElements.ModElement
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 100;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 0;
 			}
 
 			@Override

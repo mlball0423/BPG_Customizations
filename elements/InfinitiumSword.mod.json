@@ -3,29 +3,28 @@
   "_type": "tool",
   "definition": {
     "renderType": 0,
-    "texture": "hyperium_sword",
+    "texture": "infinitium_sword",
     "customModelName": "Normal",
-    "name": "Hyperium Sword",
+    "name": "Infinitium Sword",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:BPGCustomizationsTab"
     },
     "toolType": "Sword",
-    "harvestLevel": 6,
-    "efficiency": 12.0,
-    "attackSpeed": 1.0,
-    "enchantability": 42,
-    "damageVsEntity": 15.0,
+    "harvestLevel": 10,
+    "efficiency": 25.0,
+    "attackSpeed": 4.0,
+    "enchantability": 100,
+    "damageVsEntity": 100.0,
     "usageCount": 0,
     "blocksAffected": [],
     "hasGlow": false,
-    "repairItems": [
-      {
-        "value": "CUSTOM:HyperiumIngot"
-      }
-    ],
+    "repairItems": [],
     "immuneToFire": true,
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "InfinitiumSwordRightClickedInAir"
+    }
   }
 }

@@ -20,11 +20,11 @@ import java.util.List;
 import java.util.Collections;
 
 @BpgCustomizationsModElements.ModElement.Tag
-public class HCRedstoneBlock extends BpgCustomizationsModElements.ModElement {
-	@ObjectHolder("bpg_customizations:hc_redstone")
+public class HCIronBlock extends BpgCustomizationsModElements.ModElement {
+	@ObjectHolder("bpg_customizations:hc_iron")
 	public static final Block block = null;
-	public HCRedstoneBlock(BpgCustomizationsModElements instance) {
-		super(instance, 20);
+	public HCIronBlock(BpgCustomizationsModElements instance) {
+		super(instance, 60);
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class HCRedstoneBlock extends BpgCustomizationsModElements.ModElement {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(4f, 10000f).setLightLevel(s -> 0)
 					.harvestLevel(3).harvestTool(ToolType.PICKAXE).setRequiresTool());
-			setRegistryName("hc_redstone");
+			setRegistryName("hc_iron");
 		}
 
 		@Override

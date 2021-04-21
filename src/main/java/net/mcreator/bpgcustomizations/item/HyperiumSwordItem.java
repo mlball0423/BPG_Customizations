@@ -32,7 +32,7 @@ public class HyperiumSwordItem extends BpgCustomizationsModElements.ModElement {
 			}
 
 			public float getAttackDamage() {
-				return 8f;
+				return 13f;
 			}
 
 			public int getHarvestLevel() {

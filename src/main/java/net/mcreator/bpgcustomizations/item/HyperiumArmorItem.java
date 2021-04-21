@@ -48,7 +48,7 @@ public class HyperiumArmorItem extends BpgCustomizationsModElements.ModElement {
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{4, 6, 8, 3}[slot.getIndex()];
+				return new int[]{5, 8, 10, 4}[slot.getIndex()];
 			}
 
 			@Override

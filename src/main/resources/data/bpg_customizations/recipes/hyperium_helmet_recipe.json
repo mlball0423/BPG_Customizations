@@ -1,0 +1,32 @@
+{
+  "group": "bpg_customizations",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "bpg_customizations:hyperium_ingot"
+    },
+    "1": {
+      "item": "bpg_customizations:hyperium_ingot"
+    },
+    "2": {
+      "item": "bpg_customizations:hyperium_ingot"
+    },
+    "3": {
+      "item": "bpg_customizations:hyperium_ingot"
+    },
+    "4": {
+      "item": "bpg_customizations:hyperium_catalyst"
+    },
+    "5": {
+      "item": "bpg_customizations:hyperium_ingot"
+    }
+  },
+  "result": {
+    "item": "bpg_customizations:hyperium_armor_helmet",
+    "count": 1
+  }
+}

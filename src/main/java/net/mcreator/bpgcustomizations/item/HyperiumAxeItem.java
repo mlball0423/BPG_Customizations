@@ -32,7 +32,7 @@ public class HyperiumAxeItem extends BpgCustomizationsModElements.ModElement {
 			}
 
 			public float getAttackDamage() {
-				return 8f;
+				return 14f;
 			}
 
 			public int getHarvestLevel() {

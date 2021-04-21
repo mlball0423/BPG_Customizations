@@ -1,0 +1,7 @@
+{
+  "parent": "bpg_customizations:custom/worldendergreatsword",
+  "textures": {
+    "0": "bpg_customizations:blocks/worldender_texture",
+    "particle": "bpg_customizations:items/worldender_texture"
+  }
+}

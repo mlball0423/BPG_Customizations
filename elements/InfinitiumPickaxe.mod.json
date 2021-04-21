@@ -1,0 +1,30 @@
+{
+  "_fv": 17,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "infinitium_pickaxe_texture",
+    "customModelName": "Normal",
+    "name": "Infinitium Pickaxe",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:BPGCustomizationsTab"
+    },
+    "toolType": "Pickaxe",
+    "harvestLevel": 10,
+    "efficiency": 25.0,
+    "attackSpeed": 4.0,
+    "enchantability": 100,
+    "damageVsEntity": 50.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "InfinitiumPickaxeRightClickedInAir"
+    }
+  }
+}

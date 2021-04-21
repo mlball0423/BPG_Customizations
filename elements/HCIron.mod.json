@@ -2,14 +2,14 @@
   "_fv": 17,
   "_type": "block",
   "definition": {
-    "texture": "hyper_compressed_diamond",
+    "texture": "hc_iron_texture",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
     "textureRight": "",
     "textureBack": "",
-    "renderType": 10,
-    "customModelName": "Normal",
+    "renderType": 11,
+    "customModelName": "Single texture",
     "rotationMode": 0,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
@@ -32,7 +32,7 @@
         "subtract": false
       }
     ],
-    "name": "Hyper-compressed Diamond",
+    "name": "Hyper-compressed Iron",
     "specialInfo": [],
     "hardness": 4.0,
     "resistance": 10000.0,
@@ -72,7 +72,7 @@
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
     "soundOnStep": {
-      "value": "GLASS"
+      "value": "METAL"
     },
     "luminance": 0,
     "unbreakable": false,

@@ -35,7 +35,7 @@ public class HCDiamondBlock extends BpgCustomizationsModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.IRON).sound(SoundType.GLASS).hardnessAndResistance(4f, 100000f).setLightLevel(s -> 0)
+			super(Block.Properties.create(Material.IRON).sound(SoundType.GLASS).hardnessAndResistance(4f, 10000f).setLightLevel(s -> 0)
 					.harvestLevel(3).harvestTool(ToolType.PICKAXE).setRequiresTool());
 			setRegistryName("hc_diamond");
 		}
